@@ -38,6 +38,10 @@ public class TacoOrder implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Date placedAt = new Date();
+    
+    @ManyToOne
+    private User user;
+
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Taco> tacos = new ArrayList<>();
